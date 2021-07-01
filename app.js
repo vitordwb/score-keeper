@@ -1,5 +1,5 @@
 // this project is part of the 'The Web Developer Bootcamp 2021' course, availale on Udemy
-// fell free to use the use you want
+// fell free to use the way you want
 
 const p1Button = document.querySelector('#p1Button');
 const p2Button = document.querySelector('#p2Button');
@@ -21,6 +21,8 @@ p1Button.addEventListener('click', ()=>{
             isGameOver = true;
             p1Display.classList.add('has-text-success');
             p2Display.classList.add('has-text-danger');
+            p1Button.disabled = true;
+            p2Button.disabled = true;
         }
         p1Display.textContent = p1Score;
     }
@@ -33,6 +35,8 @@ p2Button.addEventListener('click', ()=>{
             isGameOver = true;
             p1Display.classList.add('has-text-danger');
             p2Display.classList.add('has-text-success');
+            p1Button.disabled = true;
+            p2Button.disabled = true;
         }
         p2Display.textContent = p2Score;
     }
@@ -54,4 +58,6 @@ function reset() {
     p2Display.textContent = 0;
     p1Display.classList.remove('has-text-success', 'has-text-danger');
     p2Display.classList.remove('has-text-success', 'has-text-danger');
+    p1Button.disabled = false;
+    p2Button.disabled = false;
 };
